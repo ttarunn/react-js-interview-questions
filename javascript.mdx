@@ -1,0 +1,310 @@
+### 1. **Difference between Pass by Value and Pass by Reference**
+   - **Pass by Value**: Creates a copy of the variable. Changes to the copy don’t affect the original value. Primitive types (`string`, `number`, `boolean`, etc.) are passed this way.
+   - **Pass by Reference**: Passes a reference to the same memory location. Changes affect the original object. Objects and arrays are passed this way.
+
+---
+
+### 2. **Difference between `map()` and `filter()`**
+   - **`map()`**: Transforms each element of an array and returns a new array with the same length.
+   - **`filter()`**: Filters elements based on a condition and returns a new array with fewer elements.
+
+---
+
+### 3. **Difference between `map()` and `forEach()`**
+   - **`map()`**: Returns a new array and does not modify the original.
+   - **`forEach()`**: Executes a function on each element but doesn’t return anything.
+
+---
+
+### 4. **Difference between Pure and Impure Functions**
+   - **Pure Function**: Always produces the same output for the same input and has no side effects.
+   - **Impure Function**: May produce different outputs for the same input or cause side effects (e.g., modifying external state).
+
+---
+
+### 5. **Difference between `for-in` and `for-of`**
+   - **`for-in`**: Iterates over object keys (including inherited properties).
+   - **`for-of`**: Iterates over iterable values (like arrays, strings, etc.).
+
+---
+
+### 6. **Difference between `call()`, `apply()`, and `bind()`**
+   - **`call()`**: Invokes a function with arguments passed individually.
+   - **`apply()`**: Invokes a function with arguments passed as an array.
+   - **`bind()`**: Returns a new function with `this` set permanently.
+
+---
+
+### 7. **Key Features of ES6**
+   - Arrow functions, `let` and `const`, Template literals, Default parameters, Rest/Spread operators, Promises, Classes, Modules, Destructuring, Generators.
+
+---
+
+### 8. **Spread Operator (`...`)**
+   - Expands an iterable (like arrays, objects) into individual elements.  
+     ```js
+     const arr = [1, 2, 3];
+     console.log(...arr); // 1, 2, 3
+     ```
+
+---
+
+### 9. **Rest Operator (`...`)**
+   - Collects multiple elements into a single array or object.  
+     ```js
+     const [a, ...rest] = [1, 2, 3]; 
+     // a = 1, rest = [2, 3]
+     ```
+
+---
+
+### 10. **Principles**
+   - **DRY**: Don’t Repeat Yourself.
+   - **KISS**: Keep It Simple, Stupid.
+   - **YAGNI**: You Aren’t Gonna Need It.
+   - **SOLID**: Design principles (e.g., Single Responsibility, Open-Closed).
+
+---
+
+### 11. **Temporal Dead Zone**
+   - A period where variables declared with `let` or `const` cannot be accessed before initialization.
+
+---
+
+### 12. **Ways to Create Objects**
+   - Object literal `{}`, `Object.create()`, Constructor function, ES6 class, `Object.assign()`.
+
+---
+
+### 13. **Difference: `Object.keys()`, `values()`, `entries()`**
+   - **`keys()`**: Returns an array of keys.
+   - **`values()`**: Returns an array of values.
+   - **`entries()`**: Returns key-value pairs as arrays.
+
+---
+
+### 14. **`Object.freeze()` vs `Object.seal()`**
+   - **`freeze()`**: Prevents adding/removing/modifying properties.
+   - **`seal()`**: Prevents adding/removing properties but allows modification.
+
+---
+
+### 15. **Polyfill**
+   - A code snippet that provides modern functionality on older browsers that don’t support it.
+
+---
+
+### 16. **Generator Function**
+   - Special function that can pause and resume its execution using `yield`.  
+     ```js
+     function* gen() { yield 1; yield 2; }
+     ```
+
+---
+
+### 17. **Prototype**
+   - An object from which other objects inherit properties and methods.
+
+---
+
+### 18. **IIFE**
+   - Immediately Invoked Function Expression, executed as soon as it is defined.  
+     ```js
+     (function() { console.log("IIFE"); })();
+     ```
+
+---
+
+### 19. **CORS (Cross-Origin Resource Sharing)**
+   - A mechanism that allows restricted resources on a web page to be accessed from another domain.
+
+---
+
+### 20. **Data Types**
+   - Primitive: `string`, `number`, `boolean`, `null`, `undefined`, `symbol`, `bigint`.  
+   - Non-Primitive: `object`, `array`, `function`.
+
+---
+
+### 21. **Difference between TypeScript and JavaScript**
+   - TypeScript is statically typed and supports interfaces. JavaScript is dynamically typed.
+
+---
+
+### 22. **Authentication vs Authorization**
+   - **Authentication**: Verifies identity (e.g., login).
+   - **Authorization**: Verifies permissions.
+
+---
+
+### 23. **Difference: `null` vs `undefined`**
+   - **`null`**: Intentional absence of value.
+   - **`undefined`**: Variable declared but not assigned a value.
+
+---
+
+### 24. **Output of `3+2+"7"`**
+   - `"57"` (first addition, then string concatenation).
+
+---
+
+### 25. **`slice()` vs `splice()`**
+   - **`slice()`**: Returns a shallow copy of a portion of an array.
+   - **`splice()`**: Modifies the original array by adding/removing elements.
+
+---
+
+### 26. **Destructuring**
+   - Extracting values from objects/arrays into variables.  
+     ```js
+     const {a, b} = {a: 1, b: 2};
+     ```
+
+---
+
+### 27. **`setTimeout()`**
+   - Executes code after a delay.
+
+---
+
+### 28. **`setInterval()`**
+   - Repeats code execution at fixed intervals.
+
+---
+
+### 29. **Promises**
+   - Handle asynchronous operations with states: Pending, Fulfilled, Rejected.
+
+---
+
+### 30. **Callstack**
+   - A data structure for managing function calls.
+
+---
+
+### 31. **Closure**
+   - A function with access to its lexical scope even when executed outside.
+
+---
+
+### 32. **Callback**
+   - A function passed as an argument to be executed later.
+
+---
+
+### 33. **Higher-Order Functions**
+   - Functions that accept or return other functions.
+
+---
+
+### 34. **Difference: `==` vs `===`**
+   - `==` compares values. `===` compares values and types.
+
+---
+
+### 35. **JavaScript Typing**
+   - Dynamically typed.
+
+---
+
+### 36. **`IndexedDB` vs `sessionStorage`**
+   - `IndexedDB`: Persistent, stores structured data.  
+   - `sessionStorage`: Temporary, stores key-value pairs.
+
+---
+
+### 37. **Interceptors**
+   - Middleware for HTTP requests/responses (e.g., in Axios).
+
+---
+
+### 38. **Hoisting**
+   - Variable and function declarations are moved to the top of their scope.
+
+---
+
+### 39. **Difference: `let`, `var`, `const`**
+   - `var`: Function-scoped, can be redeclared.
+   - `let`: Block-scoped, cannot be redeclared.
+   - `const`: Block-scoped, cannot be reassigned.
+
+---
+
+### 41. **`Promise.all` vs `allSettled` vs `any` vs `race`**
+   - **`all`**: Resolves when all promises resolve.
+   - **`allSettled`**: Resolves when all settle.
+   - **`any`**: Resolves with the first fulfilled.
+   - **`race`**: Resolves/rejects with the first completed.
+
+---
+
+### 42. **Arrow Function Limitations**
+   - No `this`, `arguments`, or `constructor`.
+
+---
+
+### 43. **Difference: `find()` vs `findIndex()`**
+   - `find()`: Returns the first matching element.  
+   - `findIndex()`: Returns its index.
+
+---
+
+### 44. **Tree Shaking**
+   - Removes unused code during bundling.
+
+---
+
+### 45. **LocalStorage vs SessionStorage**
+   - **LocalStorage**: Persistent.  
+   - **SessionStorage**: Cleared after the session ends.
+
+---
+
+### 46. **`eval()`**
+   - Executes JavaScript code as a string.
+
+---
+
+### 47. **Shallow Copy vs Deep Copy**
+   - Shallow: Copies references.  
+   - Deep: Creates independent copies.
+
+---
+
+### 48. **Undeclared vs Undefined Variables**
+   - **Undeclared**: Not defined in code.  
+   - **Undefined**: Declared but no value.
+
+---
+
+### 49-50. **Event Bubbling vs Capturing**
+   - **Bubbling**: Event propagates from child to parent.  
+   - **Capturing**: From parent to child.
+
+---
+
+### 51. **Cookies**
+   - Small data stored in the browser for state management.
+
+---
+
+### 52.
+
+ **`typeof` Operator**
+   - Returns the type of a variable.
+
+---
+
+### 53. **`this`**
+   - Refers to the execution context, varies by usage (e.g., global, object).
+
+---
+
+### 54. **Performance Optimization**
+   - Minify code, lazy loading, code splitting, caching.
+
+---
+
+### 55. **Debouncing and Throttling**
+   - **Debouncing**: Limits the execution of a function after a delay.
+   - **Throttling**: Executes a function at regular intervals.
