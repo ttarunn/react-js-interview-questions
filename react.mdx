@@ -115,3 +115,126 @@ Functional components are preferred for their simplicity and performance benefit
 **Answer**: React Fragments (`<></>` or `<React.Fragment>`) are used to group multiple elements without adding an extra node to the DOM.  
 
 ---
+
+### 21. What are class-based components in React?  
+**Answer**:  
+Class-based components are ES6 classes that extend the `React.Component` class. They must have a `render()` method that returns JSX. Class components can hold state and have access to React lifecycle methods, making them suitable for complex logic before the introduction of Hooks.  
+
+---
+
+### 22. What are React lifecycle methods?  
+**Answer**:  
+React lifecycle methods are special methods in class components that get called during the different phases of a component's life. These phases include:  
+1. **Mounting** (when a component is added to the DOM)  
+   - `constructor()`: Initializes state and binds methods.  
+   - `static getDerivedStateFromProps()`: Updates state based on props.  
+   - `render()`: Returns JSX.  
+   - `componentDidMount()`: Runs after the component is rendered. Ideal for API calls.  
+
+2. **Updating** (when a component re-renders due to state/props changes)  
+   - `static getDerivedStateFromProps()`: Updates state before re-rendering.  
+   - `shouldComponentUpdate()`: Determines whether to re-render.  
+   - `render()`: Updates the UI.  
+   - `getSnapshotBeforeUpdate()`: Captures some information before the DOM updates.  
+   - `componentDidUpdate()`: Runs after the DOM is updated.  
+
+3. **Unmounting** (when a component is removed from the DOM)  
+   - `componentWillUnmount()`: Clean up resources like timers or subscriptions.  
+
+4. **Error Handling**  
+   - `componentDidCatch()`: Handles errors in child components.  
+
+---
+
+### 23. What is the difference between functional and class components regarding lifecycle methods?  
+**Answer**:  
+Class components rely on specific lifecycle methods (`componentDidMount`, `componentDidUpdate`, etc.), whereas functional components use the `useEffect` Hook to handle lifecycle events. `useEffect` consolidates many lifecycle tasks into one function, making functional components more concise.  
+
+---
+
+### 24. When would you use `componentDidMount()`?  
+**Answer**:  
+`componentDidMount()` is called once after the initial rendering of the component. It's commonly used for:  
+- Fetching data from an API.  
+- Adding event listeners.  
+- Setting up subscriptions.  
+
+---
+
+### 25. What is `shouldComponentUpdate()` and when would you use it?  
+**Answer**:  
+`shouldComponentUpdate()` is a lifecycle method that determines whether a component should re-render when state or props change. It is used to optimize performance by preventing unnecessary renders. It returns a boolean (`true` to update, `false` to skip).  
+
+---
+
+### 26. What is `getSnapshotBeforeUpdate()`?  
+**Answer**:  
+`getSnapshotBeforeUpdate()` is called just before changes in the DOM are committed during the updating phase. It allows capturing information about the current DOM state (e.g., scroll position) before it is updated. The return value of this method is passed to `componentDidUpdate()`.  
+
+---
+
+### 27. What is `componentWillUnmount()`?  
+**Answer**:  
+`componentWillUnmount()` is called just before a component is removed from the DOM. It's used to clean up resources like:  
+- Removing event listeners.  
+- Cancelling API requests.  
+- Clearing timers or intervals.  
+
+---
+
+### 28. Why is `componentWillMount()` deprecated?  
+**Answer**:  
+`componentWillMount()` was used to perform tasks before the component mounted, such as initializing state. However, it caused issues with asynchronous code and server-side rendering, so it was deprecated in favor of `constructor()` and `static getDerivedStateFromProps()` in React 16.3+.  
+
+---
+
+### 29. How do you initialize state in a class component?  
+**Answer**:  
+State is initialized in the `constructor()` method of a class component by assigning an object to `this.state`. For example:  
+```javascript  
+class MyComponent extends React.Component {  
+  constructor(props) {  
+    super(props);  
+    this.state = { counter: 0 };  
+  }  
+}  
+```  
+
+---
+
+### 30. How do you update state in a class component?  
+**Answer**:  
+State is updated using the `setState()` method, which schedules a re-render. Example:  
+```javascript  
+this.setState({ counter: this.state.counter + 1 });  
+```  
+State updates are asynchronous, so to base updates on the previous state, you can use a callback:  
+```javascript  
+this.setState((prevState) => ({ counter: prevState.counter + 1 }));  
+```  
+
+---
+
+### 31. What is the purpose of the `constructor()` in class components?  
+**Answer**:  
+The `constructor()` is used to:  
+- Initialize state.  
+- Bind event handlers.  
+- Access props by passing them to the `super()` method.  
+
+Example:  
+```javascript  
+constructor(props) {  
+  super(props);  
+  this.state = { name: "React" };  
+}  
+```  
+
+---
+
+### 32. What is the difference between `componentDidMount()` and `componentWillUnmount()`?  
+**Answer**:  
+- **`componentDidMount()`**: Runs after the component is mounted and is used for setting up resources like API calls or event listeners.  
+- **`componentWillUnmount()`**: Runs before the component is unmounted and is used for cleaning up resources like event listeners or timers.  
+
+---
