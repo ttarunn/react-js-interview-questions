@@ -1,0 +1,216 @@
+#### 1. What is HTML?  
+**Answer**:  
+HTML (HyperText Markup Language) is the standard markup language used to create web pages. It defines the structure of web content using elements such as headings, paragraphs, links, images, and more.  
+
+---
+
+#### 2. What are HTML tags?  
+**Answer**:  
+HTML tags are special keywords enclosed within angle brackets (`< >`) that define the structure and content of a web page. For example:  
+- `<h1>`: Defines a heading.  
+- `<p>`: Defines a paragraph.  
+
+---
+
+#### 3. What is the difference between HTML and XHTML?  
+**Answer**:  
+- HTML is more forgiving with errors and is not case-sensitive.  
+- XHTML is stricter, case-sensitive, and follows XML syntax rules (e.g., tags must be properly closed).  
+
+---
+
+#### 4. What is the difference between an inline element and a block-level element?  
+**Answer**:  
+- **Block-level elements**: Start on a new line and take up the full width (e.g., `<div>`, `<p>`, `<h1>`).  
+- **Inline elements**: Stay in the same line and take up as much width as necessary (e.g., `<span>`, `<a>`, `<strong>`).  
+
+---
+
+#### 5. What is the purpose of the `<!DOCTYPE>` declaration?  
+**Answer**:  
+The `<!DOCTYPE>` declaration defines the HTML version used in the document. For example:  
+- `<!DOCTYPE html>` specifies HTML5.  
+It ensures the browser renders the page in standards mode.  
+
+---
+
+#### 6. What are semantic tags in HTML?  
+**Answer**:  
+Semantic tags clearly define their meaning and purpose in a web page, improving accessibility and SEO. Examples:  
+- `<header>`: Represents the page header.  
+- `<article>`: Represents an independent piece of content.  
+- `<footer>`: Represents the page footer.  
+
+---
+
+#### 7. What is the difference between `<div>` and `<span>`?  
+**Answer**:  
+- `<div>`: A block-level element used to group larger sections of content.  
+- `<span>`: An inline element used to style small parts of text or content.  
+
+---
+
+#### 8. What is the difference between `<strong>` and `<b>`?  
+**Answer**:  
+- `<strong>`: Adds semantic importance to the text (e.g., for screen readers).  
+- `<b>`: Makes the text bold without adding semantic meaning.  
+
+---
+
+#### 9. How do you include an image in HTML?  
+**Answer**:  
+Use the `<img>` tag with the `src` and `alt` attributes:  
+```html  
+<img src="image.jpg" alt="Description of the image" />  
+```  
+
+---
+
+#### 10. What is the purpose of the `alt` attribute in the `<img>` tag?  
+**Answer**:  
+The `alt` attribute provides a text alternative for an image, improving accessibility for screen readers and acting as fallback content if the image fails to load.  
+
+---
+
+### **Intermediate HTML Questions**  
+
+---
+
+#### 11. What is the difference between `<link>` and `<a>` tags?  
+**Answer**:  
+- `<link>`: Used to link external resources like CSS files to the HTML document.  
+- `<a>`: Used to create hyperlinks to other pages or locations within a page.  
+
+---
+
+#### 12. What is the difference between `<ul>` and `<ol>`?  
+**Answer**:  
+- `<ul>`: Creates an unordered list (bulleted).  
+- `<ol>`: Creates an ordered list (numbered).  
+
+---
+
+#### 13. How do you add a table in HTML?  
+**Answer**:  
+Use the `<table>` tag along with `<tr>` (row), `<th>` (header cell), and `<td>` (data cell) tags:  
+```html  
+<table>  
+  <tr>  
+    <th>Name</th>  
+    <th>Age</th>  
+  </tr>  
+  <tr>  
+    <td>John</td>  
+    <td>25</td>  
+  </tr>  
+</table>  
+```  
+
+---
+
+#### 14. What is the purpose of the `<form>` tag?  
+**Answer**:  
+The `<form>` tag is used to collect user input and submit it to a server. Example:  
+```html  
+<form action="/submit" method="POST">  
+  <input type="text" name="username" />  
+  <input type="submit" value="Submit" />  
+</form>  
+```  
+
+---
+
+#### 15. What are the attributes of the `<form>` tag?  
+**Answer**:  
+- `action`: Specifies the URL where form data is submitted.  
+- `method`: Defines the HTTP method (`GET` or `POST`).  
+- `enctype`: Specifies how form data should be encoded (e.g., `multipart/form-data` for file uploads).  
+
+---
+
+#### 16. What are the different types of `<input>` in HTML?  
+**Answer**:  
+Some common types of `<input>`:  
+- `text`: A single-line text input.  
+- `password`: A password field.  
+- `email`: Validates email addresses.  
+- `checkbox`: A checkbox.  
+- `radio`: A radio button.  
+- `file`: A file upload field.  
+- `submit`: A submit button.  
+
+---
+
+#### 17. What is the difference between `<iframe>` and `<embed>`?  
+**Answer**:  
+- `<iframe>`: Embeds another HTML document within a page.  
+- `<embed>`: Embeds external resources like videos or PDFs.  
+
+---
+
+#### 18. How do you create a dropdown in HTML?  
+**Answer**:  
+Use the `<select>` and `<option>` tags:  
+```html  
+<select>  
+  <option value="1">Option 1</option>  
+  <option value="2">Option 2</option>  
+</select>  
+```  
+
+---
+
+#### 19. What is the purpose of the `data-*` attributes?  
+**Answer**:  
+The `data-*` attributes allow you to store custom data in HTML elements for later use in JavaScript. Example:  
+```html  
+<div data-id="123">Hello</div>  
+```  
+
+---
+
+### **Advanced HTML Questions**  
+
+---
+
+#### 20. What are `meta` tags?  
+**Answer**:  
+`<meta>` tags provide metadata about the HTML document, like character encoding, viewport settings, and SEO information. Examples:  
+```html  
+<meta charset="UTF-8" />  
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+<meta name="description" content="This is a sample website" />  
+```  
+
+---
+
+#### 21. What is the `viewport` meta tag?  
+**Answer**:  
+The `viewport` meta tag ensures the page is responsive on mobile devices by setting the visible area of a web page:  
+```html  
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+```  
+
+---
+
+#### 22. What is the difference between `<script>` and `<noscript>`?  
+**Answer**:  
+- `<script>`: Includes JavaScript in the page.  
+- `<noscript>`: Displays fallback content for users who have JavaScript disabled.  
+
+---
+
+#### 23. What is the purpose of the `defer` and `async` attributes in `<script>`?  
+**Answer**:  
+- `defer`: Downloads the script in parallel but executes it after the HTML is fully parsed.  
+- `async`: Downloads and executes the script as soon as possible, without waiting for HTML parsing.  
+
+---
+
+#### 24. What is the purpose of ARIA in HTML?  
+**Answer**:  
+ARIA (Accessible Rich Internet Applications) attributes improve accessibility for screen readers. Example:  
+```html  
+<button aria-label="Close">X</button>  
+```  
+---
