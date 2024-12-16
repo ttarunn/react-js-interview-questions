@@ -1,0 +1,269 @@
+#### 1. What is CSS?  
+**Answer**:  
+CSS (Cascading Style Sheets) is a stylesheet language used to style HTML documents by defining the look and layout of web pages. It controls the color, font, spacing, layout, and more.  
+
+---
+
+#### 2. What are the different types of CSS?  
+**Answer**:  
+There are three types of CSS:  
+1. **Inline CSS**: Applied directly to an HTML element using the `style` attribute.  
+   ```html  
+   <p style="color: red;">Hello</p>  
+   ```  
+2. **Internal CSS**: Written inside a `<style>` tag within the `<head>` section of an HTML document.  
+   ```html  
+   <style>  
+     p { color: blue; }  
+   </style>  
+   ```  
+3. **External CSS**: Written in a separate `.css` file and linked using the `<link>` tag.  
+   ```html  
+   <link rel="stylesheet" href="styles.css" />  
+   ```  
+
+---
+
+#### 3. What is the difference between `id` and `class` in CSS?  
+**Answer**:  
+- **`id`**: Used to target a single, unique element. Defined with `#`.  
+   ```css  
+   #header { color: blue; }  
+   ```  
+- **`class`**: Used to target multiple elements. Defined with `.`.  
+   ```css  
+   .button { color: red; }  
+   ```  
+
+---
+
+#### 4. What are pseudo-classes in CSS?  
+**Answer**:  
+Pseudo-classes define a special state of an element. Common examples:  
+- `:hover`: Styles an element when hovered over.  
+- `:nth-child(n)`: Selects the nth child of a parent.  
+- `:focus`: Styles an element when it gains focus.  
+
+Example:  
+```css  
+a:hover { color: red; }  
+input:focus { border: 1px solid blue; }  
+```  
+
+---
+
+#### 5. What is the difference between `relative`, `absolute`, `fixed`, and `sticky` positioning?  
+**Answer**:  
+1. **Relative**: Positions the element relative to its normal position.  
+2. **Absolute**: Positions the element relative to its nearest positioned ancestor (or `<html>` if none).  
+3. **Fixed**: Positions the element relative to the viewport, and it doesn’t move when scrolling.  
+4. **Sticky**: Toggles between relative and fixed, depending on the scroll position.  
+
+Example:  
+```css  
+position: relative;  
+top: 10px;  
+```  
+
+---
+
+#### 6. What is the difference between `em` and `rem` in CSS?  
+**Answer**:  
+- **`em`**: Relative to the font size of its parent.  
+- **`rem`**: Relative to the root element's font size.  
+
+Example:  
+```css  
+font-size: 2em; /* Twice the size of the parent */  
+font-size: 2rem; /* Twice the size of the root (usually 16px) */  
+```  
+
+---
+
+#### 7. What are CSS selectors?  
+**Answer**:  
+CSS selectors are patterns used to select elements to style. Examples:  
+- **Universal Selector**: `* { }`  
+- **Type Selector**: `h1 { }`  
+- **Class Selector**: `.class { }`  
+- **ID Selector**: `#id { }`  
+
+---
+
+#### 8. What is the difference between `inline`, `block`, and `inline-block` elements?  
+**Answer**:  
+- **Inline**: Takes up only as much width as necessary and doesn’t start a new line (e.g., `<span>`).  
+- **Block**: Takes up the full width and starts on a new line (e.g., `<div>`).  
+- **Inline-block**: Behaves like an inline element but allows block-level styling (e.g., width and height).  
+
+---
+
+#### 9. How do you apply styles to specific child elements?  
+**Answer**:  
+Use **child combinators** or pseudo-classes. Examples:  
+```css  
+/* Direct child */  
+div > p { color: red; }  
+
+/* nth child */  
+li:nth-child(2) { color: blue; }  
+```  
+
+---
+
+#### 10. What are media queries in CSS?  
+**Answer**:  
+Media queries are used for responsive design to apply different styles based on the screen size or device. Example:  
+```css  
+@media (max-width: 768px) {  
+  body { background-color: lightgray; }  
+}  
+```  
+
+---
+
+### **Intermediate CSS Questions**  
+
+---
+
+#### 11. What is the difference between `visibility: hidden` and `display: none`?  
+**Answer**:  
+- `visibility: hidden`: Hides the element but keeps its space in the layout.  
+- `display: none`: Removes the element from the layout entirely.  
+
+---
+
+#### 12. How does the `z-index` property work?  
+**Answer**:  
+The `z-index` property controls the stack order of elements. Higher values appear in front. It only works on elements with `position` set to `relative`, `absolute`, or `fixed`.  
+
+Example:  
+```css  
+div { z-index: 10; position: relative; }  
+```  
+
+---
+
+#### 13. What is the difference between `min-width`, `max-width`, and `width`?  
+**Answer**:  
+- `width`: Defines the exact width of an element.  
+- `min-width`: Ensures the element is not smaller than the specified width.  
+- `max-width`: Ensures the element does not exceed the specified width.  
+
+---
+
+#### 14. How do you implement a CSS Grid layout?  
+**Answer**:  
+CSS Grid allows for a 2-dimensional layout system. Example:  
+```css  
+.container {  
+  display: grid;  
+  grid-template-columns: 1fr 2fr;  
+  grid-gap: 10px;  
+}  
+```  
+
+---
+
+#### 15. What is the difference between `flexbox` and `grid`?  
+**Answer**:  
+- **Flexbox**: Best for 1-dimensional layouts (row or column).  
+- **Grid**: Best for 2-dimensional layouts (rows and columns).  
+
+---
+
+#### 16. What are pseudo-elements in CSS?  
+**Answer**:  
+Pseudo-elements style specific parts of an element. Examples:  
+- `::before`: Adds content before an element.  
+- `::after`: Adds content after an element.  
+
+Example:  
+```css  
+h1::after { content: '✨'; }  
+```  
+
+---
+
+#### 17. What is the difference between `inline` and `external` styles?  
+**Answer**:  
+- **Inline styles** are written directly in the `style` attribute within an element.  
+- **External styles** are written in a separate `.css` file and linked via `<link>`.  
+
+---
+
+#### 18. How does `float` work in CSS?  
+**Answer**:  
+The `float` property is used to position an element to the left or right of its container, allowing other content to flow around it.  
+
+Example:  
+```css  
+img { float: left; }  
+```  
+
+---
+
+### **Advanced CSS Questions**  
+
+---
+
+#### 19. What is the difference between `relative`, `absolute`, `fixed`, and `sticky` in CSS?  
+**Answer**:  
+(Refer to Q5 above for the explanation.)  
+
+---
+
+#### 20. What are CSS animations?  
+**Answer**:  
+CSS animations allow elements to transition between styles using keyframes. Example:  
+```css  
+@keyframes slide {  
+  from { transform: translateX(0); }  
+  to { transform: translateX(100px); }  
+}  
+div { animation: slide 2s infinite; }  
+```  
+
+---
+
+#### 21. What is the `clip-path` property in CSS?  
+**Answer**:  
+`clip-path` is used to define a clipping region, hiding parts of an element outside the specified shape. Example:  
+```css  
+div { clip-path: circle(50%); }  
+```  
+
+---
+
+#### 22. What is the difference between `absolute` units and `relative` units in CSS?  
+**Answer**:  
+- **Absolute units**: Fixed sizes like `px`, `cm`, and `in`.  
+- **Relative units**: Depend on other elements, like `em`, `rem`, `%`.  
+
+---
+
+#### 23. What is the purpose of the `transform` property in CSS?  
+**Answer**:  
+The `transform` property applies 2D or 3D transformations to elements. Examples:  
+- `rotate(45deg)`: Rotates the element.  
+- `scale(2)`: Doubles the size of the element.  
+
+---
+
+#### 24. What is the difference between `opacity` and `rgba()` in CSS?  
+**Answer**:  
+- **`opacity`**: Affects the transparency of the entire element and its children.  
+- **`rgba()`**: Sets the transparency of the background color only.  
+
+---
+
+#### 25. How do you implement a responsive design in CSS?  
+**Answer**:  
+Responsive design can be implemented using:  
+1. **Media Queries**  
+2. **Flexible Layouts
+
+** (using Flexbox or Grid)  
+3. **Relative Units** (like `%` or `rem`)  
+
+---  
