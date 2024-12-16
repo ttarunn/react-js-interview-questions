@@ -308,3 +308,246 @@
 ### 55. **Debouncing and Throttling**
    - **Debouncing**: Limits the execution of a function after a delay.
    - **Throttling**: Executes a function at regular intervals.
+
+---
+
+### 56. **What are JavaScript modules?**  
+JavaScript modules allow you to break your code into smaller, reusable pieces. Modules use `export` to expose functionality and `import` to use it in other files.  
+```js
+// module.js
+export const greet = () => console.log("Hello!");
+
+// main.js
+import { greet } from './module.js';
+greet(); // Hello!
+```
+
+---
+
+### 57. **What is immutability in JavaScript?**  
+Immutability means an object’s state cannot be modified after it’s created. In JavaScript, objects and arrays are mutable, but techniques like `Object.freeze()` or libraries like Immutable.js can enforce immutability.
+
+---
+
+### 58. **Difference between setTimeout and setInterval**  
+- **setTimeout**: Executes a function once after a specified delay.  
+- **setInterval**: Executes a function repeatedly at specified intervals until canceled.  
+```js
+setTimeout(() => console.log("Executed once"), 1000); 
+setInterval(() => console.log("Executed repeatedly"), 1000);
+```
+
+---
+
+### 59. **How do you handle errors?**  
+- Use `try...catch` blocks to handle runtime errors.  
+- Use `.catch()` to handle promise rejections.  
+- Implement proper error messages and logging.  
+```js
+try {
+  const result = riskyOperation();
+} catch (error) {
+  console.error("Error occurred:", error);
+}
+```
+
+---
+
+### 60. **Difference between deep copy and shallow copy**  
+- **Shallow Copy**: Copies only the first level of the object, leaving nested objects as references.  
+- **Deep Copy**: Recursively copies all levels of the object.  
+```js
+// Shallow Copy
+const obj1 = { a: 1, b: { c: 2 } };
+const shallow = { ...obj1 };
+
+// Deep Copy
+const deep = JSON.parse(JSON.stringify(obj1));
+```
+
+---
+
+### 61. **What is the typeof operator?**  
+The `typeof` operator returns the type of a variable as a string.  
+```js
+console.log(typeof 42); // "number"
+console.log(typeof "Hello"); // "string"
+console.log(typeof undefined); // "undefined"
+```
+
+---
+
+### 62. **What are template literals?**  
+Template literals use backticks (``) for strings, allowing interpolation and multi-line strings.  
+```js
+const name = "Tarun";
+console.log(`Hello, ${name}!`); // Hello, Tarun!
+```
+
+---
+
+### 63. **What are IIFEs (Immediately Invoked Function Expressions)?**  
+An IIFE is a function that runs as soon as it’s defined.  
+```js
+(function () {
+  console.log("IIFE executed!");
+})();
+```
+
+---
+
+### 64. **Explain destructuring assignment.**  
+Destructuring allows unpacking values from arrays or properties from objects into variables.  
+```js
+const [a, b] = [1, 2]; // Array destructuring
+const { name, age } = { name: "John", age: 30 }; // Object destructuring
+```
+
+---
+
+### 65. **What is the spread/rest operator?**  
+- **Spread**: Expands elements of an array or object.  
+- **Rest**: Combines multiple elements into an array.  
+```js
+const arr = [1, 2, 3];
+const newArr = [...arr, 4]; // Spread
+
+function sum(...numbers) { // Rest
+  return numbers.reduce((a, b) => a + b, 0);
+}
+```
+
+---
+
+### 66. **How does the new keyword work?**  
+The `new` keyword creates an instance of an object using a constructor function.  
+```js
+function Person(name) {
+  this.name = name;
+}
+const person = new Person("Tarun");
+```
+
+---
+
+### 67. **Synchronous vs. Asynchronous code**  
+- **Synchronous**: Code executes line-by-line, blocking further execution until the current task completes.  
+- **Asynchronous**: Tasks can run concurrently, and the main thread continues executing.  
+```js
+console.log("Start");
+setTimeout(() => console.log("Async task"), 1000);
+console.log("End");
+```
+
+---
+
+### 68. **Difference between localStorage, sessionStorage, and cookies**  
+- **localStorage**: Persistent storage, survives browser restarts.  
+- **sessionStorage**: Temporary storage, cleared on tab close.  
+- **Cookies**: Used for server communication, limited in size.  
+```js
+localStorage.setItem("key", "value");
+sessionStorage.setItem("key", "value");
+```
+
+---
+
+### 69. **What is the Symbol type?**  
+A `Symbol` is a unique and immutable primitive value often used as object keys.  
+```js
+const sym = Symbol("unique");
+const obj = { [sym]: "value" };
+```
+
+---
+
+### 70. **What are generators?**  
+Generators are functions that can pause and resume execution using the `yield` keyword.  
+```js
+function* generator() {
+  yield 1;
+  yield 2;
+}
+const gen = generator();
+console.log(gen.next().value); // 1
+```
+
+---
+
+### 71. **Function declaration vs. function expression**  
+- **Declaration**: Hoisted, can be used before defining.  
+- **Expression**: Not hoisted, defined within an expression.  
+```js
+function declaration() {} // Function Declaration
+const expression = function () {}; // Function Expression
+```
+
+---
+
+### 72. **How does JavaScript handle scope and scope chains?**  
+JavaScript resolves variables by searching in the current scope and its parent scopes until it finds the variable or reaches the global scope.  
+
+---
+
+### 73. **What are default parameters?**  
+Default parameters allow setting default values for function arguments.  
+```js
+function greet(name = "Guest") {
+  console.log(`Hello, ${name}`);
+}
+greet(); // Hello, Guest
+```
+
+---
+
+### 74. **Difference between null and undefined**  
+- **`null`**: An intentional absence of value.  
+- **`undefined`**: A variable that has been declared but not assigned.  
+
+---
+
+### 75. **What are WeakMap and WeakSet?**  
+- **WeakMap**: Holds key-value pairs where keys are weakly referenced objects.  
+- **WeakSet**: Holds weakly referenced objects.  
+```js
+const wm = new WeakMap();
+const ws = new WeakSet();
+```
+
+---
+
+### 76. **Purpose of Object.freeze()**  
+`Object.freeze()` makes an object immutable by preventing modifications to its properties.  
+```js
+const obj = Object.freeze({ key: "value" });
+obj.key = "new value"; // Error or ignored
+```
+
+---
+
+### 77. **Use of Object.keys(), Object.values(), and Object.entries()**  
+- `Object.keys()`: Returns property names.  
+- `Object.values()`: Returns property values.  
+- `Object.entries()`: Returns key-value pairs as arrays.  
+
+---
+
+### 78. **What is a polyfill?**  
+A polyfill is code that provides modern functionality in older browsers that don’t natively support it.  
+
+---
+
+### 79. **How do Promise.all() and Promise.race() work?**  
+- **`Promise.all()`**: Resolves when all promises are resolved, or rejects if any promise fails.  
+- **`Promise.race()`**: Resolves/rejects as soon as the first promise resolves/rejects.  
+
+---
+
+### 80. **What is memoization?**  
+Memoization is an optimization technique where the results of expensive function calls are cached for reuse.  
+```js
+const memoizedFn = (() => {
+  const cache = {};
+  return (key) => cache[key] || (cache[key] = expensiveFn(key));
+})();
+```
